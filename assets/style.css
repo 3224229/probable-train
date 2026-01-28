@@ -59,7 +59,7 @@ h1, h2, h3 {
 }
 
 h2 {
-  font-size: 20px;
+  font-size: 24px;
   margin: 0 0 10px;
 }
 
@@ -302,11 +302,11 @@ a:hover {
 }
 
 .bio img.photo {
-  max-width: 360px;
+  display: block;
   width: 100%;
+  max-width: 440px;
   border-radius: 16px;
   border: 1px solid var(--border);
-  display: block;
   margin-top: 10px;
 }
 
@@ -316,16 +316,56 @@ a:hover {
   max-width: 100%;
 }
 
-.bio img.photo {
-  display: block;
-  max-width: 360px; /* keep or change this if you want */
-  width: 100%;
-}
-
 .bio .bio-media .cta-row {
   justify-content: flex-start;
 }
 
+.quotes {
+  margin-top: 22px;
+  font-style: italic;
+  color: var(--muted);
+  border-left: 4px solid var(--border);
+  padding-left: 12px;
+}
+
+/* -------------------------
+   About page: two-up layout
+   ------------------------- */
+
+.about-page .wrap {
+  max-width: 1120px; /* wider page just for About */
+}
+
+/* remove the home-section 720px cap on About */
+.about-page .home-section {
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* stop centering the h2s on About */
+.about-page .home-section h2 {
+  text-align: left;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+}
+
+/* side-by-side on larger screens */
+@media (min-width: 900px) {
+  .about-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 110px;
+  }
+}
+
+/* About: more breathing room under the name */
+.about-page .home-section.bio h2 {
+  margin-bottom: 18px; /* try 16–28px */
+}
 
 /* -------------------------
    Services page
